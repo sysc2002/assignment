@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by M on 2016-03-05.
  */
-public class test {
+public class ExpressionServiceTest {
 
     private static ExpressionService service = new ExpressionService();
 
@@ -29,35 +29,4 @@ public class test {
         assertEquals(value,3);
     }
 
-    public static void main(String [ ] args)
-    {
-
-
-        int value = service.calculateValues("add(1, mult(2, 3))");
-
-        String m = "";
-
-
-
-
-
-
-
-
-        /*
-        Expression a2 = new Expression ("mult(1,2)");
-        Expression a3 = new Expression ("sub(1,2)");
-        Expression a4 = new Expression ("div(1,2)");
-        Expression a5 = new Expression ("let(1,2,b)");
-
-
-
-        Expression e1 = new Expression ("add(1,,2)");
-        Expression e2 = new Expression ("mult(1,2) ");
-        Expression e3 = new Expression ("subu(1,2)");
-        Expression e4 = new Expression ("divl(1,2)");
-        Expression e5 = new Expression ("let(1,2,b,9)");
-        */
-
-    }
 }
