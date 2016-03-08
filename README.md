@@ -1,11 +1,16 @@
 # assignment
 
+# Run
 
+To run the assignment use the Main.java class. It will ask for logging level and command
+unit tests are also added and can be ran using mvn clean test or from IDE.
 
 
 # build
 
-Travis build : https://travis-ci.org/sysc2002/assignment
+
+Travis build available: https://travis-ci.org/sysc2002/assignment
+used mvn 
 
 
 # Requirement 

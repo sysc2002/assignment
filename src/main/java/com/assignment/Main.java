@@ -13,14 +13,30 @@ import java.util.Scanner;
 public class Main {
     final static Logger logger = Logger.getLogger(Main.class);
 
+    private static final ExpressionService service = new ExpressionService();
+
     public static void main(String [ ] args)
     {
         scanLog();
-        logger.debug("log level was set to "+ LogManager.getRootLogger().getLevel().toString());
+        logger.info("log level was set to "+ LogManager.getRootLogger().getLevel().toString());
         logger.info("Application started ...");
-        scanCommand();
 
-        String x = "";
+        while(true) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter command (use 'exit' to quit):\n");
+            String command = scanner.nextLine();
+            if(command.equals("exit")){
+                return;
+            }
+            logger.debug("command '"+ command + "' entered \n");
+            Integer value = service.calculateValues(command);
+            if(value == null){
+                logger.info("Invalid Syntax \n");
+                continue;
+            }
+            logger.info("Value: "+ value +"\n");
+        }
+
     }
 
     public static void scanLog (){
@@ -43,12 +59,5 @@ public class Main {
                 System.out.print("Invalid log level, use following options(INFO,ERROR,DEBUG): "+ logLevel+"\n");
                 scanLog();
         }
-    }
-
-    public static void scanCommand(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter command:\n");
-        String command = scanner.nextLine();
-        logger.debug("command '"+ command + "' entered \n");
     }
 }
